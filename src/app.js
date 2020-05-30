@@ -5,6 +5,7 @@ const app = express();
 const geocode = require('./utils/geocode.js');
 const weatherstack = require('./utils/weatherstack.js');
 
+const port = process.env.PORT || 3000;
 
 //what's? dirname && filename && node module path.
 //console.log(__dirname);
@@ -26,7 +27,7 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: "Weather application running on Node.js",
+        title: "DEMO application to get Latitude/Longitude running on Node.js",
         name: "Sathish"
     });
 })
@@ -49,7 +50,7 @@ app.get('/weather', (req, res) => {
 
     if (!req.query.address) {
         return res.send({
-            error: "Address mandatory for Weather API request"
+            error: "City mandatory for API request"
         })
     }
 
@@ -132,6 +133,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen("3000", () => {
+app.listen(port, () => {
     console.log("Server is up on port 3000");
 });

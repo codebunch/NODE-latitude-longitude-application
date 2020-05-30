@@ -8,28 +8,40 @@ fetch(url).then((response) => {
 })
 */
 
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector("input");
-const result = document.getElementById("result-loc");
+const resultLoading = document.getElementById("result-loading");
+const resultCity = document.getElementById("result-city");
+const resultLatitude = document.getElementById("result-latitude");
+const resultLongitude = document.getElementById("result-longitude");
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value;
-    const url = "http://localhost:3000/weather?address=" + location;
-    result.innerHTML = "Loading";
-    result.style.background = "yellow";
-    result.style.display = "block";
+    const url = "/weather?address=" + location;
+    resultLoading.innerHTML = "Loading";
+    resultLoading.style.background = "yellow";
+    resultLoading.style.display = "block";
     fetch(url).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                result.innerHTML = data.error;
-                result.style.background = "red";
-                result.style.display = "block";
+                resultLoading.innerHTML = data.error;
+                resultLoading.style.background = "red";
+                resultLoading.style.display = "block";
             } else {
-                result.innerHTML = data.geocode.City;
-                result.style.background = "aqua";
-                result.style.display = "block";
+                resultLoading.style.display = "none";
+
+                resultCity.style.background = "aqua";
+                resultCity.style.display = "block";
+                resultCity.innerHTML = "City: " + data.geocode.City;
+
+                resultLatitude.style.background = "aqua";
+                resultLatitude.style.display = "block";
+                resultLatitude.innerHTML = "Latitude: " + data.geocode.Latitude;
+
+                resultLongitude.style.background = "aqua";
+                resultLongitude.style.display = "block";
+                resultLongitude.innerHTML = "Longitude: " + data.geocode.Longitude;
             }
         })
     });

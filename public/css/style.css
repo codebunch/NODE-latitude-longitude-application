@@ -15,7 +15,7 @@ body {
 }
 
 .content {
-    margin: 50px;
+  margin: 50px;
 }
 /* Nav Bar */
 a {
@@ -45,19 +45,41 @@ a {
 
 .title {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
-#result-loc {
-  display: none;
+.result {
   background-color: aqua;
   color: #333333;
   font-size: 25px;
   width: 500px;
+  margin-top: 3px;
+  margin-left: 67px;
+}
+
+#result-loading,
+#result-city,
+#result-latitude,
+#result-longitude {
+  display: none;
 }
 
 form {
-    margin: 0 auto;
-    width: 90%;
+  margin: 0 auto;
+  width: 90%;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+}
+
+button {
+  width: 100px;
+  height: 25px;
+  background-color: #333333;
+  color: #ffff;
+  margin-left: 10px;
+  font-size: 16px;
 }
