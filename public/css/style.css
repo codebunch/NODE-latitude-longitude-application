@@ -1,0 +1,63 @@
+body {
+  font-family: family=Tangerine;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ccc;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 80%;
+  background-color: #ffff;
+  font-size: 20px;
+  box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.63);
+}
+
+.content {
+    margin: 50px;
+}
+/* Nav Bar */
+a {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: azure;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.nav__item {
+  flex: 0 1 15%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.no-margin {
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+#result-loc {
+  display: none;
+  background-color: aqua;
+  color: #333333;
+  font-size: 25px;
+  width: 500px;
+}
+
+form {
+    margin: 0 auto;
+    width: 90%;
+}
